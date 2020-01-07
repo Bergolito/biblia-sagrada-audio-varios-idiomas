@@ -10,6 +10,9 @@ descompacta_arquivos_pasta() {
 
 	printf "\n descompactando arquivos zip de alemao"
 
+	cd /home/bergson/eclipse-workspace/biblia_audio/
+	cd alemao
+
 	for file in $(ls *.zip)
 	do
 	  unzip $file
@@ -41,7 +44,18 @@ junta_arquivos_mp3_pasta() {
 
 }
 
+move_arquivos_mp3_pasta() {
+
+	cd $1
+	mv 1.mp3 $2
+	mv $2 ../
+	cd ../
+}
+
 executa_processo_todas_pastas() {
+
+	cd /home/bergson/eclipse-workspace/biblia_audio/
+	cd alemao
 
 	junta_arquivos_mp3_pasta 1/ biblia_alemao_01_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 2/ biblia_alemao_02_MP3WRAP.mp3
@@ -76,7 +90,10 @@ executa_processo_todas_pastas() {
 	junta_arquivos_mp3_pasta 29/ biblia_alemao_29_MP3WRAP.mp3
 
 	junta_arquivos_mp3_pasta 30/ biblia_alemao_30_MP3WRAP.mp3
-	mv 1.mp3 biblia_alemao_31_MP3WRAP.mp3
+
+
+	move_arquivos_mp3_pasta  31/ biblia_alemao_31_MP3WRAP.mp3
+
 	junta_arquivos_mp3_pasta 32/ biblia_alemao_32_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 33/ biblia_alemao_33_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 34/ biblia_alemao_34_MP3WRAP.mp3
@@ -104,16 +121,25 @@ executa_processo_todas_pastas() {
 	junta_arquivos_mp3_pasta 54/ biblia_alemao_54_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 55/ biblia_alemao_55_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 56/ biblia_alemao_56_MP3WRAP.mp3
-	mv 1.mp3 biblia_alemao_57_MP3WRAP.mp3
+	
+
+
+	move_arquivos_mp3_pasta  57/ biblia_alemao_57_MP3WRAP.mp3
+
 	junta_arquivos_mp3_pasta 58/ biblia_alemao_58_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 59/ biblia_alemao_59_MP3WRAP.mp3
 
 	junta_arquivos_mp3_pasta 60/ biblia_alemao_60_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 61/ biblia_alemao_61_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 62/ biblia_alemao_62_MP3WRAP.mp3
-	mv 1.mp3 biblia_alemao_63_MP3WRAP.mp3
-	mv 1.mp3 biblia_alemao_64_MP3WRAP.mp3
-	mv 1.mp3 biblia_alemao_65_MP3WRAP.mp3
+
+	move_arquivos_mp3_pasta  63/ biblia_alemao_63_MP3WRAP.mp3
+	move_arquivos_mp3_pasta  64/ biblia_alemao_64_MP3WRAP.mp3
+	move_arquivos_mp3_pasta  65/ biblia_alemao_65_MP3WRAP.mp3
+
+
+
+
 	junta_arquivos_mp3_pasta 66/ biblia_alemao_66_MP3WRAP.mp3
 
 }
@@ -279,8 +305,6 @@ apaga_arquivos(){
 ####################################################
 ####################################################
 
-cd /home/bergson/eclipse-workspace/biblia_audio/
-cd alemao
 descompacta_arquivos_pasta
 
 ####################################################

@@ -407,7 +407,7 @@ baixar_arquivos_ptbr(){
 	wget http://audio.br.wordproject.com/bibles/app/audio/59_64.zip
 	wget http://audio.br.wordproject.com/bibles/app/audio/59_65.zip
 	wget http://audio.br.wordproject.com/bibles/app/audio/59_66.zip
-	
+
 }
 
 cd /home/bergson/eclipse-workspace/biblia_audio/
@@ -423,7 +423,7 @@ mkdir pt-br
 # ingles
 printf "\n Baixando audios de Ingles"
 cd ingles
-#baixar_arquivos_ingles
+baixar_arquivos_ingles
 cd ../
 ####################################################
 
@@ -431,7 +431,7 @@ cd ../
 # espanhol
 printf "\n Baixando audios de Espanhol"
 cd espanhol
-#baixar_arquivos_espanhol
+baixar_arquivos_espanhol
 cd ../
 ####################################################
 
@@ -439,7 +439,7 @@ cd ../
 # frances
 printf "\n Baixando audios de Frances"
 cd frances
-#baixar_arquivos_frances
+baixar_arquivos_frances
 cd ../
 ####################################################
 
@@ -447,7 +447,7 @@ cd ../
 # Alemao
 printf "\n Baixando audios de Alemao"
 cd alemao
-#baixar_arquivos_alemao
+baixar_arquivos_alemao
 cd ../
 ####################################################
 
@@ -455,7 +455,7 @@ cd ../
 # Italiano
 printf "\n Baixando audios de Italiano"
 cd italiano
-#baixar_arquivos_italiano
+baixar_arquivos_italiano
 cd ../
 ####################################################
 

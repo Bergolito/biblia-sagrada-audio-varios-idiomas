@@ -10,6 +10,9 @@ descompacta_arquivos_pasta() {
 
 	printf "\n descompactando arquivos zip de italiano"
 
+	cd /home/bergson/eclipse-workspace/biblia_audio/
+	cd italiano
+
 	for file in $(ls *.zip)
 	do
 	  unzip $file
@@ -41,7 +44,18 @@ junta_arquivos_mp3_pasta() {
 
 }
 
+move_arquivos_mp3_pasta() {
+
+	cd $1
+	mv 1.mp3 $2
+	mv $2 ../
+	cd ../
+}
+
 executa_processo_todas_pastas() {
+
+	cd /home/bergson/eclipse-workspace/biblia_audio/
+	cd italiano
 
 	junta_arquivos_mp3_pasta 1/ biblia_italiano_01_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 2/ biblia_italiano_02_MP3WRAP.mp3
@@ -76,7 +90,10 @@ executa_processo_todas_pastas() {
 	junta_arquivos_mp3_pasta 29/ biblia_italiano_29_MP3WRAP.mp3
 
 	junta_arquivos_mp3_pasta 30/ biblia_italiano_30_MP3WRAP.mp3
-	mv 1.mp3 biblia_italiano_31_MP3WRAP.mp3
+
+
+	move_arquivos_mp3_pasta  31/ biblia_italiano_31_MP3WRAP.mp3
+
 	junta_arquivos_mp3_pasta 32/ biblia_italiano_32_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 33/ biblia_italiano_33_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 34/ biblia_italiano_34_MP3WRAP.mp3
@@ -104,16 +121,25 @@ executa_processo_todas_pastas() {
 	junta_arquivos_mp3_pasta 54/ biblia_italiano_54_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 55/ biblia_italiano_55_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 56/ biblia_italiano_56_MP3WRAP.mp3
-	mv 1.mp3 biblia_italiano_57_MP3WRAP.mp3
+	
+
+
+	move_arquivos_mp3_pasta  57/ biblia_italiano_57_MP3WRAP.mp3
+
 	junta_arquivos_mp3_pasta 58/ biblia_italiano_58_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 59/ biblia_italiano_59_MP3WRAP.mp3
 
 	junta_arquivos_mp3_pasta 60/ biblia_italiano_60_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 61/ biblia_italiano_61_MP3WRAP.mp3
 	junta_arquivos_mp3_pasta 62/ biblia_italiano_62_MP3WRAP.mp3
-	mv 1.mp3 biblia_italiano_63_MP3WRAP.mp3
-	mv 1.mp3 biblia_italiano_64_MP3WRAP.mp3
-	mv 1.mp3 biblia_italiano_65_MP3WRAP.mp3
+
+	move_arquivos_mp3_pasta  63/ biblia_italiano_63_MP3WRAP.mp3
+	move_arquivos_mp3_pasta  64/ biblia_italiano_64_MP3WRAP.mp3
+	move_arquivos_mp3_pasta  65/ biblia_italiano_65_MP3WRAP.mp3
+
+
+
+
 	junta_arquivos_mp3_pasta 66/ biblia_italiano_66_MP3WRAP.mp3
 
 }
@@ -279,8 +305,6 @@ apaga_arquivos(){
 ####################################################
 ####################################################
 
-cd /home/bergson/eclipse-workspace/biblia_audio/
-cd italiano
 descompacta_arquivos_pasta
 
 ####################################################
