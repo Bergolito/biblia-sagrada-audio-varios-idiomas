@@ -6,11 +6,13 @@
 ####################################################
 ####################################################
 
+DIRETORIO_RAIZ=/home/bergson/workspace/biblia-sagrada-audio-varios-idiomas
+
 descompacta_arquivos_pasta() {
 
 	printf "\n descompactando arquivos zip de portugues"
 
-	cd /home/bergson/eclipse-workspace/biblia_audio/
+	cd $DIRETORIO_RAIZ
 	cd portugues
 
 	for file in $(ls *.zip)
@@ -54,7 +56,7 @@ move_arquivos_mp3_pasta() {
 
 executa_processo_todas_pastas() {
 
-	cd /home/bergson/eclipse-workspace/biblia_audio/
+	cd $DIRETORIO_RAIZ
 	cd portugues
 
 	junta_arquivos_mp3_pasta 1/ biblia_portugues_01_MP3WRAP.mp3
@@ -146,7 +148,7 @@ executa_processo_todas_pastas() {
 
 renomeia_todos_arquivos() {
 
-	cd /home/bergson/eclipse-workspace/biblia_audio/
+	cd $DIRETORIO_RAIZ
 	cd portugues
 
 	mv biblia_portugues_01_MP3WRAP.mp3 biblia_portugues_01.mp3
